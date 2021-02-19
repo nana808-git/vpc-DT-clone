@@ -24,3 +24,4 @@ resource "aws_subnet" "private" {
     Environment = "${var.app["env"]}"
     Purpose = "private"
   }
+}
