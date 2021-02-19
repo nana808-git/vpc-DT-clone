@@ -14,7 +14,7 @@ resource "aws_security_group" "main" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["10.100.40.0/22", "10.100.44.0/22"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags {
