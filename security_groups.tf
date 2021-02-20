@@ -17,7 +17,7 @@ resource "aws_security_group" "main" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
+  tags = {
     Name        = "${var.app["name"]}-${var.app["env"]}-sg-default"
     Application = "${var.app["name"]}"
     Environment = "${var.app["env"]}"
