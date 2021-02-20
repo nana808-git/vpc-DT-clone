@@ -4,7 +4,7 @@ resource "aws_vpc" "vpc" {
   enable_dns_hostnames = "true"
   instance_tenancy     = "default"
 
-  tags {
+  tags = {
     Name        = "${var.app["name"]}-${var.app["env"]}-vpc"
     Application = "${var.app["name"]}"
     Environment = "${var.app["env"]}"
@@ -14,7 +14,7 @@ resource "aws_vpc" "vpc" {
 resource "aws_internet_gateway" "igw" {
   vpc_id = "${aws_vpc.vpc.id}"
 
-  tags {
+  tags = {
     Name        = "${var.app["name"]}-${var.app["env"]}-igw"
     Application = "${var.app["name"]}"
     Environment = "${var.app["env"]}"

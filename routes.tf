@@ -1,7 +1,7 @@
 resource "aws_route_table" "public" {
   vpc_id = "${aws_vpc.vpc.id}"
 
-  tags {
+  tags = {
     Name        = "${var.app["name"]}-${var.app["env"]}-rt-public"
     Application = "${var.app["name"]}"
     Environment = "${var.app["env"]}"
@@ -25,7 +25,7 @@ resource "aws_route_table" "private" {
   vpc_id = "${aws_vpc.vpc.id}"
   count  = "2"
 
-  tags {
+  tags = {
     Name        = "${var.app["name"]}-${var.app["env"]}-rt-private"
     Application = "${var.app["name"]}"
     Environment = "${var.app["env"]}"

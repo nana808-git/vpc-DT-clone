@@ -4,7 +4,7 @@ resource "aws_subnet" "public" {
   cidr_block        = "${var.network["publicAz${count.index + 1}"]}"
   availability_zone = "${var.availability_zones["${count.index}"]}"
 
-  tags {
+  tags = {
     Name        = "${var.app["name"]}-${var.app["env"]}-sn-public"
     Application = "${var.app["name"]}"
     Environment = "${var.app["env"]}"
@@ -18,7 +18,7 @@ resource "aws_subnet" "private" {
   cidr_block        = "${var.network["privateAz${count.index + 1}"]}"
   availability_zone = "${var.availability_zones["${count.index}"]}"
 
-  tags {
+  tags = {
     Name        = "${var.app["name"]}-${var.app["env"]}-sn-private"
     Application = "${var.app["name"]}"
     Environment = "${var.app["env"]}"
